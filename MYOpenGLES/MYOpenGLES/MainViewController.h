@@ -6,13 +6,15 @@
 //  Copyright © 2016年 admin. All rights reserved.
 //
 
-#import "MYGLKViewController.h"
 #import <GLKit/GLKit.h>
+@class MYGLKVertexAttribArrayBuffer;
 
-@interface MainViewController : MYGLKViewController
+@interface MainViewController : GLKViewController
 {
-    GLuint vertexBufferID;
+    MYGLKVertexAttribArrayBuffer *vertexBuffer;
 }
 
 @property (strong, nonatomic) GLKBaseEffect *baseEffect;
+@property (strong, nonatomic) MYGLKVertexAttribArrayBuffer *vertexBuffer;
+
 @end

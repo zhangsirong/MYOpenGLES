@@ -7,6 +7,8 @@
 //
 
 #import "MainViewController.h"
+#import "MYEAGLContext.h"
+#import "MYGLKVertexAttribArrayBuffer.h"
 
 @interface MainViewController ()
 
@@ -14,6 +16,7 @@
 
 @implementation MainViewController
 @synthesize baseEffect;
+@synthesize vertexBuffer;
 
 
 typedef struct {
@@ -31,40 +34,43 @@ static const SceneVertex vertices[] =
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    MYGLKView *view = (MYGLKView *)self.view;
+    GLKView *view = (GLKView *)self.view;
     
-    view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    view.context = [[MYEAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     [EAGLContext setCurrentContext:view.context];
     self.baseEffect = [[GLKBaseEffect alloc] init];
     self.baseEffect.useConstantColor = GL_TRUE;
-    self.baseEffect.constantColor = GLKVector4Make(1.0, 0.0f, 1.0f, 1.0f);
+    self.baseEffect.constantColor = GLKVector4Make(1.0, 0.0f, 0.0f, 1.0f);                     //着色语言 三角形颜色
     
-    glClearColor(0.0f, 0.0f, 1.0, 1.0f);
-    glGenBuffers(1, &vertexBufferID);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    ((MYEAGLContext *)view.context).clearColor = GLKVector4Make(0.0f, 0.0f, 1.0f, 1.0f);      //背景
+    
+    self.vertexBuffer = [[MYGLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneVertex)
+                                                                  numberOfVertices:sizeof(vertices) / sizeof(SceneVertex)
+                                                                             bytes:vertices
+                                                                             usage:GL_STATIC_DRAW];
 }
 
--(void)glkView:(MYGLKView *)view drawInRect:(CGRect)rect
+-(void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     [self.baseEffect prepareToDraw];
-    glClear(GL_COLOR_BUFFER_BIT);
-    glEnableVertexAttribArray(GLKVertexAttribPosition);
-    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(SceneVertex), NULL);
+    [(MYEAGLContext *)view.context clear:GL_COLOR_BUFFER_BIT];
+    [self.vertexBuffer prepareToDrawWithAttrib:GLKVertexAttribPosition
+                           numberOfCoordinates:3
+                                  attribOffset:offsetof(SceneVertex, positionCoords)
+                                  shouldEnable:YES];
     
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    [self.vertexBuffer drawArrayWithMode:GL_TRIANGLES
+                        startVertexIndex:0
+                        numberOfVertices:3];
 }
 
 -(void)viewDidUnload
 {
     [super viewDidUnload];
     
-    MYGLKView *view = (MYGLKView *)self.view;
-    [EAGLContext setCurrentContext:view.context];
-    if (0 != vertexBufferID) {
-        glDeleteBuffers(1, &vertexBufferID);
-        vertexBufferID = 0;
-    }
+    GLKView *view = (GLKView *)self.view;
+    [MYEAGLContext setCurrentContext:view.context];
+    self.vertexBuffer = nil;
     view.context = nil;
     [EAGLContext setCurrentContext:nil];
 }

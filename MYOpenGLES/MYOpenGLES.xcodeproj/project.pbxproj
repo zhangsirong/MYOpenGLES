@@ -12,8 +12,8 @@
 		846C95EB1DEC490C00055C42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846C95EA1DEC490C00055C42 /* Assets.xcassets */; };
 		846C95EE1DEC490C00055C42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846C95EC1DEC490C00055C42 /* LaunchScreen.storyboard */; };
 		846C95F71DEC495E00055C42 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C95F61DEC495E00055C42 /* MainViewController.m */; };
-		846C95FC1DEC4D8700055C42 /* MYGLKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C95F91DEC4D8700055C42 /* MYGLKView.m */; };
-		846C95FD1DEC4D8700055C42 /* MYGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C95FB1DEC4D8700055C42 /* MYGLKViewController.m */; };
+		846C96081DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C96051DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m */; };
+		846C96091DEC4E6200055C42 /* MYEAGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C96071DEC4E6200055C42 /* MYEAGLContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +26,10 @@
 		846C95EF1DEC490C00055C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846C95F51DEC495E00055C42 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		846C95F61DEC495E00055C42 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		846C95F81DEC4D8700055C42 /* MYGLKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYGLKView.h; sourceTree = "<group>"; };
-		846C95F91DEC4D8700055C42 /* MYGLKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYGLKView.m; sourceTree = "<group>"; };
-		846C95FA1DEC4D8700055C42 /* MYGLKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYGLKViewController.h; sourceTree = "<group>"; };
-		846C95FB1DEC4D8700055C42 /* MYGLKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYGLKViewController.m; sourceTree = "<group>"; };
+		846C96041DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYGLKVertexAttribArrayBuffer.h; sourceTree = "<group>"; };
+		846C96051DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYGLKVertexAttribArrayBuffer.m; sourceTree = "<group>"; };
+		846C96061DEC4E6200055C42 /* MYEAGLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYEAGLContext.h; sourceTree = "<group>"; };
+		846C96071DEC4E6200055C42 /* MYEAGLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYEAGLContext.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +62,10 @@
 		846C95DD1DEC490C00055C42 /* MYOpenGLES */ = {
 			isa = PBXGroup;
 			children = (
-				846C95F81DEC4D8700055C42 /* MYGLKView.h */,
-				846C95F91DEC4D8700055C42 /* MYGLKView.m */,
-				846C95FA1DEC4D8700055C42 /* MYGLKViewController.h */,
-				846C95FB1DEC4D8700055C42 /* MYGLKViewController.m */,
+				846C96041DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.h */,
+				846C96051DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m */,
+				846C96061DEC4E6200055C42 /* MYEAGLContext.h */,
+				846C96071DEC4E6200055C42 /* MYEAGLContext.m */,
 				846C95E11DEC490C00055C42 /* AppDelegate.h */,
 				846C95E21DEC490C00055C42 /* AppDelegate.m */,
 				846C95F51DEC495E00055C42 /* MainViewController.h */,
@@ -156,10 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846C96081DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m in Sources */,
 				846C95E31DEC490C00055C42 /* AppDelegate.m in Sources */,
-				846C95FD1DEC4D8700055C42 /* MYGLKViewController.m in Sources */,
-				846C95FC1DEC4D8700055C42 /* MYGLKView.m in Sources */,
 				846C95F71DEC495E00055C42 /* MainViewController.m in Sources */,
+				846C96091DEC4E6200055C42 /* MYEAGLContext.m in Sources */,
 				846C95E01DEC490C00055C42 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
