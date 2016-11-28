@@ -6,9 +6,10 @@
 //  Copyright © 2016年 admin. All rights reserved.
 //
 
+#import "MYGLKViewController.h"
 #import <GLKit/GLKit.h>
 
-@interface MainViewController : GLKViewController
+@interface MainViewController : MYGLKViewController
 {
     GLuint vertexBufferID;
 }

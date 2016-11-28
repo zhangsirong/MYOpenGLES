@@ -8,7 +8,13 @@
 
 #import "MainViewController.h"
 
+@interface MainViewController ()
+
+@end
+
 @implementation MainViewController
+@synthesize baseEffect;
+
 
 typedef struct {
     GLKVector3  positionCoords;
@@ -25,21 +31,21 @@ static const SceneVertex vertices[] =
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    GLKView *view = (GLKView *)self.view;
+    MYGLKView *view = (MYGLKView *)self.view;
     
     view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     [EAGLContext setCurrentContext:view.context];
     self.baseEffect = [[GLKBaseEffect alloc] init];
     self.baseEffect.useConstantColor = GL_TRUE;
-    self.baseEffect.constantColor = GLKVector4Make(0.0f, 0.0f, 1.0f, 1.0f);
+    self.baseEffect.constantColor = GLKVector4Make(1.0, 0.0f, 1.0f, 1.0f);
     
-    glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+    glClearColor(0.0f, 0.0f, 1.0, 1.0f);
     glGenBuffers(1, &vertexBufferID);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 }
 
--(void)glkView:(GLKView *)view drawInRect:(CGRect)rect
+-(void)glkView:(MYGLKView *)view drawInRect:(CGRect)rect
 {
     [self.baseEffect prepareToDraw];
     glClear(GL_COLOR_BUFFER_BIT);
@@ -53,7 +59,7 @@ static const SceneVertex vertices[] =
 {
     [super viewDidUnload];
     
-    GLKView *view = (GLKView *)self.view;
+    MYGLKView *view = (MYGLKView *)self.view;
     [EAGLContext setCurrentContext:view.context];
     if (0 != vertexBufferID) {
         glDeleteBuffers(1, &vertexBufferID);
@@ -62,5 +68,4 @@ static const SceneVertex vertices[] =
     view.context = nil;
     [EAGLContext setCurrentContext:nil];
 }
-
 @end
