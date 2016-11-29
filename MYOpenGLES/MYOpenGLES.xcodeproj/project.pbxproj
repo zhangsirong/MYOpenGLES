@@ -14,6 +14,7 @@
 		846C95F71DEC495E00055C42 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C95F61DEC495E00055C42 /* MainViewController.m */; };
 		846C96081DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C96051DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m */; };
 		846C96091DEC4E6200055C42 /* MYEAGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C96071DEC4E6200055C42 /* MYEAGLContext.m */; };
+		84FBCDD51DED0F2A0080D2C1 /* leaves.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84FBCDD41DED0F2A0080D2C1 /* leaves.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		846C96051DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYGLKVertexAttribArrayBuffer.m; sourceTree = "<group>"; };
 		846C96061DEC4E6200055C42 /* MYEAGLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYEAGLContext.h; sourceTree = "<group>"; };
 		846C96071DEC4E6200055C42 /* MYEAGLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYEAGLContext.m; sourceTree = "<group>"; };
+		84FBCDD41DED0F2A0080D2C1 /* leaves.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = leaves.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		846C95DE1DEC490C00055C42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84FBCDD41DED0F2A0080D2C1 /* leaves.gif */,
 				846C95DF1DEC490C00055C42 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -144,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84FBCDD51DED0F2A0080D2C1 /* leaves.gif in Resources */,
 				846C95EE1DEC490C00055C42 /* LaunchScreen.storyboard in Resources */,
 				846C95EB1DEC490C00055C42 /* Assets.xcassets in Resources */,
 			);
@@ -309,6 +313,7 @@
 				846C95F41DEC490C00055C42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
