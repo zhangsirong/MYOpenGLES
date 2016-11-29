@@ -11,7 +11,16 @@
 
 @interface MainViewController : GLKViewController
 {
-    MYGLKVertexAttribArrayBuffer *vertexBuffer;
+    GLuint _program;
+    
+    GLKMatrix4 _modelViewProjectionMatrix;
+    GLKMatrix3 _normalMatrix;
+    GLfloat _rotation;
+    
+    GLuint _vertexArray;
+    GLuint _vertexBuffer;
+    GLuint _texture0ID;
+    GLuint _texture1ID;
 }
 
 @property (strong, nonatomic) GLKBaseEffect *baseEffect;

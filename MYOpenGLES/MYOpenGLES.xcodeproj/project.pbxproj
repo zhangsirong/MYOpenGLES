@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		841A6DEE1DED4B6C006B4B7F /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 841A6DEC1DED4B6C006B4B7F /* beetle.png */; };
-		841A6DEF1DED4B6C006B4B7F /* leaves.gif in Resources */ = {isa = PBXBuildFile; fileRef = 841A6DED1DED4B6C006B4B7F /* leaves.gif */; };
+		841A6DF31DED5556006B4B7F /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 841A6DF11DED5556006B4B7F /* Shader.fsh */; };
+		841A6DF41DED5556006B4B7F /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 841A6DF21DED5556006B4B7F /* Shader.vsh */; };
+		841A6DF81DED66C4006B4B7F /* leaves.gif in Resources */ = {isa = PBXBuildFile; fileRef = 841A6DF71DED66C4006B4B7F /* leaves.gif */; };
+		841A6DFA1DED66CE006B4B7F /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 841A6DF91DED66CE006B4B7F /* beetle.png */; };
 		846C95E01DEC490C00055C42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C95DF1DEC490C00055C42 /* main.m */; };
 		846C95E31DEC490C00055C42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C95E21DEC490C00055C42 /* AppDelegate.m */; };
 		846C95EB1DEC490C00055C42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846C95EA1DEC490C00055C42 /* Assets.xcassets */; };
@@ -19,8 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		841A6DEC1DED4B6C006B4B7F /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beetle.png; sourceTree = "<group>"; };
-		841A6DED1DED4B6C006B4B7F /* leaves.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = leaves.gif; sourceTree = "<group>"; };
+		841A6DF11DED5556006B4B7F /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		841A6DF21DED5556006B4B7F /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
+		841A6DF71DED66C4006B4B7F /* leaves.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = leaves.gif; sourceTree = "<group>"; };
+		841A6DF91DED66CE006B4B7F /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beetle.png; sourceTree = "<group>"; };
 		846C95DB1DEC490C00055C42 /* MYOpenGLES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYOpenGLES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846C95DF1DEC490C00055C42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		846C95E11DEC490C00055C42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841A6DF01DED5556006B4B7F /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				841A6DF11DED5556006B4B7F /* Shader.fsh */,
+				841A6DF21DED5556006B4B7F /* Shader.vsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
 		846C95D21DEC490C00055C42 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +79,7 @@
 		846C95DD1DEC490C00055C42 /* MYOpenGLES */ = {
 			isa = PBXGroup;
 			children = (
+				841A6DF01DED5556006B4B7F /* Shaders */,
 				846C96041DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.h */,
 				846C96051DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m */,
 				846C96061DEC4E6200055C42 /* MYEAGLContext.h */,
@@ -85,8 +99,8 @@
 		846C95DE1DEC490C00055C42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				841A6DEC1DED4B6C006B4B7F /* beetle.png */,
-				841A6DED1DED4B6C006B4B7F /* leaves.gif */,
+				841A6DF91DED66CE006B4B7F /* beetle.png */,
+				841A6DF71DED66C4006B4B7F /* leaves.gif */,
 				846C95DF1DEC490C00055C42 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -150,10 +164,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841A6DFA1DED66CE006B4B7F /* beetle.png in Resources */,
 				846C95EE1DEC490C00055C42 /* LaunchScreen.storyboard in Resources */,
-				841A6DEF1DED4B6C006B4B7F /* leaves.gif in Resources */,
+				841A6DF81DED66C4006B4B7F /* leaves.gif in Resources */,
+				841A6DF41DED5556006B4B7F /* Shader.vsh in Resources */,
 				846C95EB1DEC490C00055C42 /* Assets.xcassets in Resources */,
-				841A6DEE1DED4B6C006B4B7F /* beetle.png in Resources */,
+				841A6DF31DED5556006B4B7F /* Shader.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
