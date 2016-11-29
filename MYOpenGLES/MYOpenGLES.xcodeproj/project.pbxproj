@@ -15,6 +15,7 @@
 		846C96081DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C96051DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m */; };
 		846C96091DEC4E6200055C42 /* MYEAGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C96071DEC4E6200055C42 /* MYEAGLContext.m */; };
 		84FBCDD51DED0F2A0080D2C1 /* leaves.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84FBCDD41DED0F2A0080D2C1 /* leaves.gif */; };
+		84FBCDD81DED14110080D2C1 /* MYGLKTextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FBCDD71DED14110080D2C1 /* MYGLKTextureLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		846C96061DEC4E6200055C42 /* MYEAGLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYEAGLContext.h; sourceTree = "<group>"; };
 		846C96071DEC4E6200055C42 /* MYEAGLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYEAGLContext.m; sourceTree = "<group>"; };
 		84FBCDD41DED0F2A0080D2C1 /* leaves.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = leaves.gif; sourceTree = "<group>"; };
+		84FBCDD61DED14110080D2C1 /* MYGLKTextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYGLKTextureLoader.h; sourceTree = "<group>"; };
+		84FBCDD71DED14110080D2C1 /* MYGLKTextureLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYGLKTextureLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 		846C95DD1DEC490C00055C42 /* MYOpenGLES */ = {
 			isa = PBXGroup;
 			children = (
+				84FBCDD61DED14110080D2C1 /* MYGLKTextureLoader.h */,
+				84FBCDD71DED14110080D2C1 /* MYGLKTextureLoader.m */,
 				846C96041DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.h */,
 				846C96051DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m */,
 				846C96061DEC4E6200055C42 /* MYEAGLContext.h */,
@@ -163,6 +168,7 @@
 				846C96081DEC4E6200055C42 /* MYGLKVertexAttribArrayBuffer.m in Sources */,
 				846C95E31DEC490C00055C42 /* AppDelegate.m in Sources */,
 				846C95F71DEC495E00055C42 /* MainViewController.m in Sources */,
+				84FBCDD81DED14110080D2C1 /* MYGLKTextureLoader.m in Sources */,
 				846C96091DEC4E6200055C42 /* MYEAGLContext.m in Sources */,
 				846C95E01DEC490C00055C42 /* main.m in Sources */,
 			);

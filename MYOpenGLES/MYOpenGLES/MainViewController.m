@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "MYEAGLContext.h"
 #import "MYGLKVertexAttribArrayBuffer.h"
+#import "MYGLKTextureLoader.h"
 
 @interface MainViewController ()
 
@@ -51,7 +52,7 @@ static const SceneVertex vertices[] =
                                                                              usage:GL_STATIC_DRAW];
     
     CGImageRef imageRef = [UIImage imageNamed:@"leaves.gif"].CGImage;
-    GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:imageRef options:nil error:NULL];
+    MYGLKTextureInfo *textureInfo = [MYGLKTextureLoader textureWithCGImage:imageRef options:nil error:NULL];
     self.baseEffect.texture2d0.name = textureInfo.name;
     self.baseEffect.texture2d0.target = textureInfo.target;
 }
