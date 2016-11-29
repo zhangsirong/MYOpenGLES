@@ -10,20 +10,15 @@
 @class MYGLKVertexAttribArrayBuffer;
 
 @interface MainViewController : GLKViewController
-{
-    GLuint _program;
-    
-    GLKMatrix4 _modelViewProjectionMatrix;
-    GLKMatrix3 _normalMatrix;
-    GLfloat _rotation;
-    
-    GLuint _vertexArray;
-    GLuint _vertexBuffer;
-    GLuint _texture0ID;
-    GLuint _texture1ID;
-}
 
 @property (strong, nonatomic) GLKBaseEffect *baseEffect;
+@property (strong, nonatomic) GLKBaseEffect *extraEffect;
 @property (strong, nonatomic) MYGLKVertexAttribArrayBuffer *vertexBuffer;
+@property (strong, nonatomic) MYGLKVertexAttribArrayBuffer *extraBuffer;
+
+@property (nonatomic) GLfloat centerVertexHeight;
+@property (nonatomic) BOOL shouldUseFaceNormals;
+@property (nonatomic) BOOL shouldDrawNormals;
+
 
 @end
