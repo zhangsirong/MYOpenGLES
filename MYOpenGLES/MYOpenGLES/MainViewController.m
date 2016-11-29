@@ -79,12 +79,15 @@ static const SceneVertex vertices[] =
     NSDictionary *options = @{GLKTextureLoaderOriginBottomLeft : [NSNumber numberWithBool:YES]};
 
     CGImageRef imageRef0 = [UIImage imageNamed:@"leaves.gif"].CGImage;
-    self.textureInfo0 = [GLKTextureLoader textureWithCGImage:imageRef0 options:options error:NULL];
-    CGImageRef imageRef1 = [UIImage imageNamed:@"beetle.png"].CGImage;
-    self.textureInfo1 = [GLKTextureLoader textureWithCGImage:imageRef1 options:options error:NULL];
+    GLKTextureInfo *textureInfo0 = [GLKTextureLoader textureWithCGImage:imageRef0 options:options error:NULL];
+    self.baseEffect.texture2d0.name = textureInfo0.name;
+    self.baseEffect.texture2d0.target = textureInfo0.target;
     
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    CGImageRef imageRef1 = [UIImage imageNamed:@"beetle.png"].CGImage;
+    GLKTextureInfo *textureInfo1 = [GLKTextureLoader textureWithCGImage:imageRef1 options:options error:NULL];
+    self.baseEffect.texture2d1.name = textureInfo1.name;
+    self.baseEffect.texture2d1.target = textureInfo1.target;
+    self.baseEffect.texture2d1.envMode = GLKTextureEnvModeDecal; //混合模式
 }
 
 -(void)viewDidUnload
@@ -114,18 +117,12 @@ static const SceneVertex vertices[] =
                                   attribOffset:offsetof(SceneVertex, textureCoords)
                                   shouldEnable:YES];
     
-    self.baseEffect.texture2d0.name = self.textureInfo0.name;
-    self.baseEffect.texture2d0.target = self.textureInfo0.target;
+    [self.vertexBuffer prepareToDrawWithAttrib:GLKVertexAttribTexCoord1
+                           numberOfCoordinates:2
+                                  attribOffset:offsetof(SceneVertex, textureCoords)
+                                  shouldEnable:YES];
+    
     [self.baseEffect prepareToDraw];
-    
-    [self.vertexBuffer drawArrayWithMode:GL_TRIANGLES
-                        startVertexIndex:0
-                        numberOfVertices:sizeof(vertices) / sizeof(SceneVertex)];
-    
-    self.baseEffect.texture2d0.name = self.textureInfo1.name;
-    self.baseEffect.texture2d0.target = self.textureInfo1.target;
-    [self.baseEffect prepareToDraw];
-    
     [self.vertexBuffer drawArrayWithMode:GL_TRIANGLES
                         startVertexIndex:0
                         numberOfVertices:sizeof(vertices) / sizeof(SceneVertex)];

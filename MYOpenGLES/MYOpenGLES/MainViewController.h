@@ -16,7 +16,5 @@
 
 @property (strong, nonatomic) GLKBaseEffect *baseEffect;
 @property (strong, nonatomic) MYGLKVertexAttribArrayBuffer *vertexBuffer;
-@property (strong, nonatomic) GLKTextureInfo *textureInfo0;
-@property (strong, nonatomic) GLKTextureInfo *textureInfo1;
 
 @end
