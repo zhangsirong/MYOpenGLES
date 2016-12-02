@@ -12,13 +12,10 @@
 @interface MainViewController : GLKViewController
 
 @property (strong, nonatomic) GLKBaseEffect *baseEffect;
-@property (strong, nonatomic) GLKBaseEffect *extraEffect;
 @property (strong, nonatomic) MYGLKVertexAttribArrayBuffer *vertexBuffer;
-@property (strong, nonatomic) MYGLKVertexAttribArrayBuffer *extraBuffer;
 
-@property (nonatomic) GLfloat centerVertexHeight;
-@property (nonatomic) BOOL shouldUseFaceNormals;
-@property (nonatomic) BOOL shouldDrawNormals;
-
+@property (strong, nonatomic) GLKTextureInfo *blandTextureInfo;
+@property (strong, nonatomic) GLKTextureInfo *interestingTextureInfo;
+@property (nonatomic) BOOL shouldUseDetailLighting;
 
 @end
